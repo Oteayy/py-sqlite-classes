@@ -22,3 +22,7 @@ class CakesDatabase:
             (name, calories, price)
         )
         self.conn.commit()
+        
+    def get_all_meals(self):
+        self.cur.execute('SELECT * FROM meals')
+        return self.cur.fetchall()
